@@ -28,7 +28,18 @@
  */
 void operatorControl() {
 	while (1) {
-		printf("Hello PROS User!\n");
-		delay(20);
+
+		//X axis are 2,3
+		//Y axis is 1,4
+		motorSet(leftMotor, joystickGetAnalog(joystick, 4));
+		motorSet(rightMotor, joystickGetAnalog(joystick, 1));
+		if(joystickGetDigital(joystick, 6, JOY_UP)==1){motorSet(liftMotor, 127);}
+		else if(joystickGetDigital(joystick, 6, JOY_DOWN)==1){motorSet(liftMotor, -127);}
+		else {motorSet(liftMotor, 0);}
+
+		if(joystickGetDigital(joystick, 7, JOY_UP)==1){motorSet(clawMotor, 127);}
+		else if(joystickGetDigital(joystick, 7, JOY_DOWN)==1){motorSet(clawMotor, -127);}
+		else {motorSet(liftMotor, 0);}
+		}
 	}
 }

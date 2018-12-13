@@ -24,8 +24,12 @@
 
 // This prevents multiple inclusion, which isn't bad for this file but is good practice
 #define MAIN_H_
+#define leftMotor 2
+#define rightMotor 3
+#define liftMotor 4
 
 #include <API.h>
+#include "include\utilities\movementcontrol.h"
 
 // Allow usage of this file in C++ programs
 #ifdef __cplusplus
